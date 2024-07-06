@@ -98,7 +98,7 @@ onMounted(() => {
 
 <div id="google1" class="modaloverlayy">
   <div class="modal" style="padding: 20px;margin-top: 80px;"><a href="#close" class="close">&times;</a>
- <<wallet-multi-button />
+ <wallet-multi-button />
 <CreateTokenForm />
  
   
