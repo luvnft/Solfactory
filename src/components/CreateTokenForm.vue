@@ -1,8 +1,7 @@
 <template>
-
   <div class="box flex flex-col mt-5 border border-gray-300 p-10 rounded-lg shadow-lg shadow-gray-500 w-[550px]">
     <div class="ribbon"><span>mainnet 💛</span></div>
-    <wallet-multi-button />
+    
     <div class="flex flex-row items-center justify-center">
       <input
         class="mt-2 block w-full rounded-md border-0 py-1.5 pl-4 pr-4 text-gray-900 ring-1 ring-inset ring-gray-400 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -92,9 +91,6 @@
 </template>
 
 <script setup lang="ts">
-
-import { WalletMultiButton } from 'solana-wallets-vue'
-import "solana-wallets-vue/styles.css";
 import { ref } from "vue";
 import { useWallet, useAnchorWallet } from 'solana-wallets-vue';
 import { Connection, LAMPORTS_PER_SOL, PublicKey, Transaction, SystemProgram, Keypair, TransactionSignature } from '@solana/web3.js'

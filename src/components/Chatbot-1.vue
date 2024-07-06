@@ -1,8 +1,5 @@
 <template>
   <div class="chatbot">
-    <div class="chatbot-header" v-if="messages.length > 0">
-      <button class="clear-button" @click="clearMessages">✖</button>
-    </div>
     <div class="messages">
       <div v-for="(message, index) in messages" :key="index" class="message">
         <strong>{{ message.user ? 'You' : 'Bot' }}:</strong> {{ message.text }}
@@ -14,54 +11,39 @@
 </template>
 
 <script>
-import axios from 'axios';
+const axios = require('axios');
+console.log('API Key:', process.env.OPENAI_API_KEY); 
+require('dotenv').config();
 
-export default {
-  data() {
-    return {
-      messages: [],
-      input: '',
-    };
+
+// Define the prompt
+const prompt = `Hello`;
+
+// Make the API call
+axios.post('https://api.openai.com/v1/completions', {
+    prompt: prompt,
+    max_tokens: 1024,
+    temperature: 0.5
   },
-  methods: {
-    async sendMessage() {
-      if (this.input.trim() === '') {
-        return;
-      }
-
-      // Add user's message to the chat
-      this.messages.push({ user: true, text: this.input });
-
-      try {
-        const response = await axios.post(
-          'https://api.openai.com/v1/completions',
-          {
-            model: 'text-davinci-003', // Specify the model you are using
-            prompt: this.input,
-            max_tokens: 150,
-            temperature: 0.7
-          },
-          {
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${process.env.VUE_APP_OPENAI_API_KEY}`
-            }
-          }
-        );
-
-        const botResponse = response.data.choices[0].text.trim();
-        this.messages.push({ user: false, text: botResponse });
-      } catch (error) {
-        console.error('Error communicating with OpenAI API:', error);
-      } finally {
-        this.input = '';
-      }
-    },
-    clearMessages() {
-      this.messages = [];
+  {
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
     }
   }
-};
+)
+.then(response => {
+    // Extract the generated text from the API response
+    const generatedText = response.data.choices[0].text;
+    console.log(generatedText)
+  })
+  .catch(error => {
+    console.log(error);
+  });
+
+
+
+  
 </script>
 
 <style scoped>
@@ -78,23 +60,6 @@ export default {
     border-radius: 12px 12px 0px 0px;
 }
 
-.chatbot-header {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.clear-button {
-    background: none;
-    border: none;
-    font-size: 18px;
-    cursor: pointer;
-    color: #ccc;
-}
-
-.clear-button:hover {
-    color: #ff0000;
-}
-
 .messages {
   max-height: 200px;
   overflow-y: auto;
@@ -103,10 +68,5 @@ export default {
 
 .message {
   margin-bottom: 5px;
-}
-
-button {
-    margin-left: 5%!important;
-    padding-bottom: 5px!important;
 }
 </style>

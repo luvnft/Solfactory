@@ -114,9 +114,8 @@ export default {
   background-color: white;
   padding: 20px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  z-index: 99999999;
+  z-index: 1000;
   animation: pulse 1s ease-out;
-  
 }
 
 /* Close button */

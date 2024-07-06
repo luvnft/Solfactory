@@ -7,7 +7,7 @@
  <a class="cta" href="#google"><p class="cto" style="margin-top: 23px;font-size:1.3em;">How to use</p></a>
 <div id="google" class="modaloverlay">
   <div class="modal">
-    <a href="#close" class="close"></a>
+    <a href="#close" class="close">&times;</a>
     <div><p>
     <strong>Welcome to SPL Forge!</strong>
     <br><br>

@@ -5,12 +5,12 @@ import Chatbot from './components/Chatbot-1.vue';
 import Modal from './components/ModalTest.vue';
 import Popup from './components/PopUp.vue';
 import "./assets/add.css";
-import FlipCoin from './components/FlipCoin.vue';
+import CustomButton from './components/WalletButton.vue';
 import SolPrice from './components/SolPrice.vue';
 import Car from './components/CarOu.vue';
 import CarouSe from './components/CarouSe.vue'; 
 import LoadingScreen from './components/LoadingScreen.vue'; 
-import { Analytics } from "@vercel/analytics/react"
+
 
 
 
@@ -55,11 +55,11 @@ onMounted(() => {
 
 
 <div class="bk">
-  <div class="flex lg:px-36 lg:flex-row flex-col justify-center items-center h-screen relative">
-    <div class="flex flex-col lg:w-1/2 justify-center items-center w-full">
+  <div class="relative flex flex-col items-center justify-center h-screen lg:px-36 lg:flex-row">
+    <div class="flex flex-col items-center justify-center w-full lg:w-1/2">
       <!--ring div starts here-->
 
-<div style="z-index:999;position: absolute;top: 5%;margin-left: 20%;"><input class="closeflag" id="unique-id-for-box-1" type="checkbox"><div class="msgbox" style="
+<div style="z-index:222;position: absolute;top: 5%;margin-left: 20%;"><input class="closeflag" id="unique-id-for-box-1" type="checkbox"><div class="msgbox" style="
         border: 2px solid black;
     border-radius: 4px;
     padding: 19px;
@@ -83,13 +83,13 @@ onMounted(() => {
         <wallet-multi-button />
 
         <SolPrice />
-        
+        <CustomButton />
         
       </div>
     </div>
     
     
-    <div class="flex justify-center items-center lg:w-1/2">
+    <div class="flex items-center justify-center lg:w-1/2">
 
     
      <CarouSe />
@@ -97,8 +97,8 @@ onMounted(() => {
 
 
 <div id="google1" class="modaloverlayy">
-  <div class="modal" style="padding: 20px;"><a href="#close" class="close"></a>
- 
+  <div class="modal" style="padding: 20px;margin-top: 80px;"><a href="#close" class="close">&times;</a>
+ <<wallet-multi-button />
 <CreateTokenForm />
  
   
@@ -109,28 +109,15 @@ onMounted(() => {
       </div>
 
       <div id="google2" class="modaloverlay">
-  <div class="modal"><a href="#close" class="close"></a>
+  <div class="modal"><a href="#close" class="close">&times;</a>
 
   test2
       
       </div>
       </div>
 
-
-
- <div id="google3" class="modaloverlayyy">
-  <div class="modal"><a href="#close" class="close"></a>
-
-<div class="iframe-container">
- <iframe src="https://splgamble.vercel.app/" width="100%" height="500px" frameborder="0" allowfullscreen></iframe></div>
-      
-      </div>
-      </div>
-
-
       <Car />
     </div>
-    <FlipCoin />
     <Chatbot />
 </div>
 
@@ -139,7 +126,7 @@ onMounted(() => {
 
 
 
-<Analytics />
+
 </template>
 
 
@@ -190,224 +177,6 @@ onMounted(() => {
 
 <style>
 
-.flex.lg\:px-36.lg\:flex-row.flex-col.justify-center.items-center.h-screen.relative {
-    overflow: hidden;
-}
-
-
-
-
-
-
-.aflip {
-  -webkit-backface-visibility: visible;
-  backface-visibility: visible;
-  -webkit-animation-name: flip;
-  animation-name: flip;
-  animation-delay:6s;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  }
-  @-webkit-keyframes flip {
-  0% {
-  -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -360deg);
-  transform: perspective(400px) rotate3d(0, 1, 0, -360deg);
-  -webkit-animation-timing-function: ease-out;
-  animation-timing-function: ease-out;
-  }
-  40% {
-  -webkit-transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);
-  transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);
-  -webkit-animation-timing-function: ease-out;
-  animation-timing-function: ease-out;
-  }
-  50% {
-  -webkit-transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);
-  transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);
-  -webkit-animation-timing-function: ease-in;
-  animation-timing-function: ease-in;
-  }
-  80% {
-  -webkit-transform: perspective(400px) scale3d(.95, .95, .95);
-  transform: perspective(400px) scale3d(.95, .95, .95);
-  -webkit-animation-timing-function: ease-in;
-  animation-timing-function: ease-in;
-  }
-  100% {
-  -webkit-transform: perspective(400px);
-  transform: perspective(400px);
-  -webkit-animation-timing-function: ease-in;
-  animation-timing-function: ease-in;
-  }
-  }
-  @keyframes flip {
-  0% {
-  -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -360deg);
-  transform: perspective(400px) rotate3d(0, 1, 0, -360deg);
-  -webkit-animation-timing-function: ease-out;
-  animation-timing-function: ease-out;
-  }
-  40% {
-  -webkit-transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);
-  transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);
-  -webkit-animation-timing-function: ease-out;
-  animation-timing-function: ease-out;
-  }
-  50% {
-  -webkit-transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);
-  transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);
-  -webkit-animation-timing-function: ease-in;
-  animation-timing-function: ease-in;
-  }
-  80% {
-  -webkit-transform: perspective(400px) scale3d(.95, .95, .95);
-  transform: perspective(400px) scale3d(.95, .95, .95);
-  -webkit-animation-timing-function: ease-in;
-  animation-timing-function: ease-in;
-  }
-  100% {
-  -webkit-transform: perspective(400px);
-  transform: perspective(400px);
-  -webkit-animation-timing-function: ease-in;
-  animation-timing-function: ease-in;
-  }
-  } 
-×
-
-label.closebutton {
-    cursor: url(https://i.imgur.com/ek44f48.png), auto !important;
-}
-
-.custom-cursor {
-    cursor: url(https://i.imgur.com/mu9r8sc.png), auto;
-}
-
-button {
-    /* cursor: pointer; */
-    cursor: url(https://i.imgur.com/ek44f48.png), auto !important;
-}
-
-a {
-    cursor: url(https://i.imgur.com/ek44f48.png), auto !important;
-}
-
-@keyframes BouR {
-  0% {
-    animation-timing-function: ease-in;
-    opacity: 0;
-    transform: translateX(250px);
-  }
-
-  38% {
-    animation-timing-function: ease-out;
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  55% {
-    animation-timing-function: ease-in;
-    transform: translateX(68px);
-  }
-
-  72% {
-    animation-timing-function: ease-out;
-    transform: translateX(0);
-  }
-
-  81% {
-    animation-timing-function: ease-in;
-    transform: translateX(32px);
-  }
-
-  90% {
-    animation-timing-function: ease-out;
-    transform: translateX(0);
-  }
-
-  95% {
-    animation-timing-function: ease-in;
-    transform: translateX(8px);
-  }
-
-  100% {
-    animation-timing-function: ease-out;
-    transform: translateX(0);
-  }
-}
-
-@keyframes ScaleUP {
-  0% {
-    transform: scale(0.5);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes myAnim {
-  0% {
-    animation-timing-function: ease-in;
-    opacity: 0;
-    transform: translateY(-250px);
-  }
-
-  38% {
-    animation-timing-function: ease-out;
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  55% {
-    animation-timing-function: ease-in;
-    transform: translateY(-65px);
-  }
-
-  72% {
-    animation-timing-function: ease-out;
-    transform: translateY(0);
-  }
-
-  81% {
-    animation-timing-function: ease-in;
-    transform: translateY(-28px);
-  }
-
-  90% {
-    animation-timing-function: ease-out;
-    transform: translateY(0);
-  }
-
-  95% {
-    animation-timing-function: ease-in;
-    transform: translateY(-8px);
-  }
-
-  100% {
-    animation-timing-function: ease-out;
-    transform: translateY(0);
-  }
-}
-
-.iframe-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
-            height:100%;
-        }
-        .iframe-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
 button.swv-button.swv-button-trigger {
     margin-left: auto;
     margin-right: auto;
@@ -451,7 +220,7 @@ a.cr {
     padding: 50px;
     border-radius: 23px;
     width: 50%;
-    background-image: url(https://i.imgur.com/py2KVmM.png);
+    background-image: url(https://i.imgur.com/LA17um6.png);
     width: 50%;
     background-position: right;
     background-size: 30%;
@@ -464,7 +233,7 @@ a.cy {
     background: #E1597F;
     padding: 50px;
     border-radius: 23px;
-    background-image: url(https://i.imgur.com/py2KVmM.png);
+    background-image: url(https://i.imgur.com/LA17um6.png);
     width: 50%;
     background-position: right;
     background-size: 30%;
@@ -516,8 +285,6 @@ button.cursor-pointer.relative.p-3.border-2.border-white.overflow-hidden.bg-grad
     position: fixed;
     bottom: 4%;
     right: 6%;
-    animation: BouR 2s ease 0s 1 normal forwards;
-    animation-delay:5.1s;
 }
 
 @keyframes hue-rotate-animation {
@@ -600,7 +367,6 @@ border-radius: 13px;
   opacity: 1;
   pointer-events: auto;
   z-index: 99999;
-  background-image: url(https://media-public.canva.com/z9gLc/MAEFHRz9gLc/1/s2.png);
 }
 .modaloverlay .modal {
 background-color: #121212;
@@ -625,19 +391,7 @@ background-color: #121212;
     max-height: 57em;
     max-width: 66em;
     width: 85%;
-   
-  }
-
-.modaloverlayyy .modal {
-  padding: 0em !important;
- }
-  .modaloverlayy .modal {
-    height: 75%;
-    margin: 5% auto;
-    max-height: 57em;
-    max-width: 66em;
-    width: 85%;
-    margin-top:180px!important;
+    margin-top:180px;
   }
 }
 .modaloverlay .modal > iframe, .modaloverlay .modal > div {
@@ -646,11 +400,10 @@ background-color: #121212;
   
 }
 .modaloverlay .close {
-color: #fff;
+background-color: #ff000000;
+    color: #fff;
     font-size: 24px;
-    width: 30px;
-    height: 30px;
-    padding: 4px 4px;
+    padding: 8px 18px;
     position: absolute;
     right: 10px;
     text-align: center;
@@ -658,89 +411,7 @@ color: #fff;
     top: 10px;
     z-index: 1;
     border-radius: 23px;
-    background-image: url(https://static.vecteezy.com/system/resources/previews/019/634/201/non_2x/3d-icon-of-cancel-free-png.png);
-    background-size: 100%;
-    background-position: center;
 }
-
-
-
-
-
-
-
-
-.modaloverlayyy {
-  background: rgb(0 0 0 / 94%);
-  bottom: 0;
-  left: 0;
-  opacity: 0;
-  pointer-events: none;
-  position: fixed;
-  right: 0;
-  top: 0;
-  -webkit-transition: opacity 400ms ease-in;
-  -moz-transition: opacity 400ms ease-in;
-  transition: opacity 400ms ease-in;
-  z-index: -1;
-  display: none;
-}
-.modaloverlayyy:target {
-  display: block;
-  opacity: 1;
-  pointer-events: auto;
-  z-index: 99999;
-  background-image: url(https://media-public.canva.com/z9gLc/MAEFHRz9gLc/1/s2.png);
-}
-.modaloverlayyy .modal {
-
-    height: 100%;
-    position: relative;
-    margin: 0 auto;   
-    background-size: 30%;
-    
-    color:white;
-    background-repeat: no-repeat;
-    overflow:hidden;
-    border-radius: 23px;
-    background-position: 100% 100%;
-}
-@media (min-width: 60em) {
-  .modaloverlayyy .modal {
-    height: 85%;
-        max-width: 90%;
-        margin-top:20px;
-        
-  }
-}
-.modaloverlayyy .modal > iframe, .modaloverlayyy .modal > div {
-  border: none;
-  width: 100%;
-  
-}
-.modaloverlayyy .close {
-color: #fff;
-    font-size: 24px;
-    width: 30px;
-    height: 30px;
-    padding: 4px 4px;
-    position: absolute;
-    right: 10px;
-    text-align: center;
-    text-decoration: none;
-    top: 10px;
-    z-index: 1;
-    border-radius: 23px;
-    background-image: url(https://static.vecteezy.com/system/resources/previews/019/634/201/non_2x/3d-icon-of-cancel-free-png.png);
-    background-size: 100%;
-    background-position: center;
-}
-
-
-
-
-
-
 
 
 
@@ -749,7 +420,7 @@ color: #fff;
 
 
 .modaloverlayy {
-  background: rgb(0 0 0 / 94%);
+  background: rgba(0, 0, 0, 0.8);
   bottom: 0;
   left: 0;
   opacity: 0;
@@ -765,14 +436,9 @@ color: #fff;
 }
 .modaloverlayy:target {
   display: block;
-    opacity: 1;
-    pointer-events: auto;
-    z-index: 99999;
-    background-image: url(https://i.imgur.com/6cmzcpu.png);
-    background-size: cover !important;
-    -webkit-backdrop-filter: none !important;
-    backdrop-filter: none !important;
-    background-position: right;
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 99999;
 }
 .modaloverlayy .modal {
 
@@ -803,11 +469,10 @@ color: #fff;
   
 }
 .modaloverlayy .close {
-color: #fff;
+background-color: #ff000000;
+    color: #fff;
     font-size: 24px;
-    width: 30px;
-    height: 30px;
-    padding: 4px 4px;
+    padding: 8px 18px;
     position: absolute;
     right: 10px;
     text-align: center;
@@ -815,9 +480,6 @@ color: #fff;
     top: 10px;
     z-index: 1;
     border-radius: 23px;
-    background-image: url(https://static.vecteezy.com/system/resources/previews/019/634/201/non_2x/3d-icon-of-cancel-free-png.png);
-    background-size: 100%;
-    background-position: center;
 }
 
 
@@ -1330,9 +992,9 @@ p.back {
 
 
 div#google1:hover {
-    
-
-   
+    background: rgb(0 0 0 / 95%);
+    transform: scale(1.2);
+    transition: 2s;
 }
 
 .box {
@@ -1395,8 +1057,6 @@ div#google1:hover {
    align-items: center;
    justify-content: center;
    text-align: center;
-   animation: myAnim 2s ease 0s 1 normal forwards;
-   animation-delay:5s;
    
 }
 
@@ -1720,7 +1380,7 @@ button.bg-blue-500.hover\:bg-blue-700.text-white.font-bold.py-3.px-4.rounded.w-f
     width: 75%;
     z-index: 444;
     margin-left: auto;
-    box-shadow: 8px 8px #FE8526;
+    box-shadow: 8px 8px hsla(39, 100%, 68%, 1);
     margin-right: auto;
     background: #373736;
     font-family: "Sora"!important;
@@ -1736,7 +1396,7 @@ button.bg-blue-500.hover\:bg-blue-700.text-white.font-bold.py-3.px-4.rounded.w-f
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    height:450px;
+    height:400px;
     max-height: 600px;
     padding-top: 20px;
     filter: drop-shadow(2px 4px 6px black);
@@ -1762,11 +1422,12 @@ button.bg-blue-500.hover\:bg-blue-700.text-white.font-bold.py-3.px-4.rounded.w-f
 }
 
 div#app {
-    dispay: flex;
-    background-position: 0 100%;
-    background-size: 100%;
+    dispay:flex;
+    background-image: url(https://i.imgur.com/WrJcCVq.png);
+    background-position:bottom left;
+    background-size: 35%;
     background-color: #ffffff00;
-    background-image: url(https://i.imgur.com/LLaBtf0.png);
+    background-repeat: no-repeat;
 }
 
 .over {
@@ -1822,11 +1483,6 @@ col.mt-5.border.border-gray-300.p-10.rounded-lg.shadow-lg.shadow-gray-500.w-\[55
 .bk {
 width: 100%;
     height: 100%;
-    background-image: url(https://i.imgur.com/f7B6pf7.png);
-    background-size: 40%;
-    background-color: #ffffff00;
-    background-repeat: no-repeat;
-    background-position: bottom left;
     
 }
 
@@ -1989,8 +1645,6 @@ width: 100%;
 
 h1.tt.text-5xl.font-sans.text-slate-800.font-bold.text-center.text-transparent.bg-clip-text.bg-gradient-to-l.from-\[\#7928ca\].to-\[\#ff0080\] {
     font-weight: 900;
-    animation: ScaleUP 2s ease 0s 1 normal forwards;
-    animation-delay:4.5s;
 
 }
 
@@ -2019,7 +1673,6 @@ body {
     background-size: 170%;
     background-position: left;
     backdrop-filter: blur(11px);
-    cursor: url(https://i.imgur.com/mu9r8sc.png) 0 0, auto !important;
    
 }
 
@@ -2510,7 +2163,7 @@ video {
   margin-top: 0.75rem;
 }
 .mt-5 {
-
+  margin-top: 1.25rem;
 }
 .block {
   display: block;
@@ -3320,22 +2973,9 @@ SMART
 
 @media (max-width: 600px) {
 
-
-.flex.lg\:px-36.lg\:flex-row.flex-col.justify-center.items-center.h-screen.relative {
-    overflow: inherit!important;
-}
-
-.outcome {
-  
-    margin-top: inherit!important;
-    margin-left: inherit!important;
-    
-}
-
 div#google1:hover {
     
     transform: none;
-
     
 }
 
@@ -3384,7 +3024,7 @@ backdrop-filter: none !important;
 
 
 .glitch {
-    margin-top: 200px;
+    margin-top: 120px;
     /* font-size: 5rem !important; */
     line-height: 55px;
     margin-bottom: 40px;
@@ -3399,7 +3039,7 @@ h1.tt.text-5xl.font-sans.text-slate-800.font-bold.text-center.text-transparent.b
     transform:none!important;
     margin-top: 20%;
     width: 100% !important;
-    height: 650px;
+    height: 450px;
     max-height: 600px;
     padding-top: 20px;
     padding: 9px;
@@ -3446,7 +3086,7 @@ h1.tt.text-5xl.font-sans.text-slate-800.font-bold.text-center.text-transparent.b
 }
 
   .flex.justify-center.items-center.lg\:w-1\/2 {
-    
+    z-index: 222;
 }
 
 .mt-10 {
@@ -3466,8 +3106,7 @@ input.mt-2.block.w-full.rounded-md.border-0.py-1\.5.pl-4.pr-4.text-gray-900.ring
 
 div#app {
     
-    background-size: 100%;
-    background-image:url(https://i.imgur.com/4tO079U.png);
+    background-size: 55%;
     
 }
 
@@ -3476,7 +3115,7 @@ transition: 2s;
     margin-right: auto;
     width: 80%;
     margin-left: AUTO;
-    height: 450px;
+    height: 400px;
     max-height: 600px;
     padding-top: 20px;
     filter: drop-shadow(2px 4px 6px black);
@@ -3518,11 +3157,6 @@ p.nop {
 
 
 @media only screen and (max-width: 600px) {
-  
-button.cursor-pointer.relative.p-3.border-2.border-white.overflow-hidden.bg-gradient-to-tr.from-yellow-100.to-yellow-200.group.duration-300.hover\:-rotate-45.hover\:opacity-75.hover\:scale-125.active\:scale-100.rounded-full.drop-shadow-xl {
-    zoom: 60%!important;
-}
-
    tt {
     font-size:3em!important;
   }
@@ -3549,7 +3183,7 @@ display: none;
     border: 3px solid #fff;
     -webkit-backdrop-filter: blur(9px);
     backdrop-filter: blur(9px);
-    
+    box-shadow: 15px -11px 0px 9px rgb(35 35 35);
     background-position: 100% 100%;
 }
 
